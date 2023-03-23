@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
 
 import twitter4j.Trend;
 import twitter4j.Trends;
@@ -21,11 +22,8 @@ import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.conf.ConfigurationBuilder;
 
-@RestController
+@Controller
 public class RepositoryDetailsController {
-
-
-
 
     @Autowired
     private Environment env;
@@ -34,7 +32,8 @@ public class RepositoryDetailsController {
 	public String getRepos() throws IOException {
 		GitHub github = new GitHubBuilder().withPassword("stalin.lenin@gmail.com", "XXXXXXXX").build();
 		GHRepositorySearchBuilder builder = github.searchRepositories();
-		return "Greetings from Valaxy Technologies ";
+//		return "Greetings from Valaxy Technologies ";
+		return "index";
 	}
 
 	@GetMapping("/trends")
